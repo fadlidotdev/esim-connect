@@ -5,7 +5,7 @@ import { useTranslation } from "../components/TranslationProvider";
 const Index = () => {
   const { t, isEnglish } = useTranslation();
 
-  const hrefPrivacyAndPolicy = isEnglish ? "/en/privacy-and-policy" : "/privacy-and-policy";
+  const hrefPrivacyAndPolicy = isEnglish ? "/en/privacy" : "/privacy";
   const hrefHome = isEnglish ? "/en" : "/";
 
   return (
