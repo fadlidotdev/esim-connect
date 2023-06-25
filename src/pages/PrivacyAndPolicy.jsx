@@ -1,13 +1,10 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Logo from "../components/Logo";
 import { useTranslation } from "../components/TranslationProvider";
 
 const PrivacyAndPolicy = () => {
-  const { pathname } = useLocation();
+  const { t, isEnglish } = useTranslation();
 
-  const { t } = useTranslation();
-
-  const isEnglish = pathname.includes("en");
   const hrefHome = isEnglish ? "/en" : "/";
 
   return (

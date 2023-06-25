@@ -28,7 +28,7 @@ export const useTranslation = () => {
     return translation[translation_id] ?? "";
   };
 
-  return { t };
+  return { t, isEnglish };
 };
 
 export default TranslationProvider;

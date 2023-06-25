@@ -1,19 +1,17 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Logo from "../components/Logo";
 import { useTranslation } from "../components/TranslationProvider";
 
 const Index = () => {
-  const { pathname } = useLocation();
+  const { t, isEnglish } = useTranslation();
 
-  const isEnglish = pathname.includes("/en");
   const hrefPrivacyAndPolicy = isEnglish ? "/en/privacy-and-policy" : "/privacy-and-policy";
-
-  const { t } = useTranslation();
+  const hrefHome = isEnglish ? "/en" : "/";
 
   return (
     <div className="bg-center h-screen flex text-center p-5 text-white flex-col items-center justify-center bg-[url('/background.jpg')]">
       <div className="absolute right-5 top-5 left-5">
-        <Link to="/">
+        <Link to={hrefHome}>
           <Logo className="md:mx-auto" />
         </Link>
       </div>
