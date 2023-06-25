@@ -1,8 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../components/Logo";
-import { useTranslation } from "react-i18next";
-import { useEffect } from "react";
-import i18n from "../helpers/i18n";
+import { useTranslation } from "../components/TranslationProvider";
 
 const PrivacyAndPolicy = () => {
   const { pathname } = useLocation();
@@ -11,12 +9,6 @@ const PrivacyAndPolicy = () => {
 
   const isEnglish = pathname.includes("en");
   const hrefHome = isEnglish ? "/en" : "/";
-
-  useEffect(() => {
-    if (isEnglish) {
-      i18n.changeLanguage("en");
-    }
-  }, [isEnglish]);
 
   return (
     <div className="p-5 py-0 text-[#53565A]">

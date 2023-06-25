@@ -1,20 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../components/Logo";
-import { useTranslation } from "react-i18next";
-import { useEffect } from "react";
-import i18n from "../helpers/i18n";
+import { useTranslation } from "../components/TranslationProvider";
 
 const Index = () => {
   const { pathname } = useLocation();
 
   const isEnglish = pathname.includes("/en");
   const hrefPrivacyAndPolicy = isEnglish ? "/en/privacy-and-policy" : "/privacy-and-policy";
-
-  useEffect(() => {
-    if (isEnglish) {
-      i18n.changeLanguage("en");
-    }
-  }, [isEnglish]);
 
   const { t } = useTranslation();
 

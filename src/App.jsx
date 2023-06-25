@@ -1,41 +1,28 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Route } from "react-router-dom";
 import Index from "./pages/Index";
 import PrivacyAndPolicy from "./pages/PrivacyAndPolicy";
-
-const routes = createBrowserRouter([
-  {
-    path: "/",
-    element: <Index />,
-  },
-  {
-    path: "/id",
-    element: <Index />,
-  },
-  {
-    path: "/en",
-    element: <Index />,
-  },
-
-  {
-    path: "/privacy-and-policy",
-    element: <PrivacyAndPolicy />,
-  },
-  {
-    path: "/id/privacy-and-policy",
-    element: <PrivacyAndPolicy />,
-  },
-  {
-    path: "/en/privacy-and-policy",
-    element: <PrivacyAndPolicy />,
-  },
-  {
-    path: "/*",
-    element: <Index />,
-  },
-]);
+import { Switch } from "react-router-dom/cjs/react-router-dom.min";
 
 const App = () => {
-  return <RouterProvider router={routes} />;
+  return (
+    <Switch>
+      <Route path="/en/privacy-and-policy">
+        <PrivacyAndPolicy />
+      </Route>
+
+      <Route path="/id/privacy-and-policy">
+        <PrivacyAndPolicy />
+      </Route>
+
+      <Route path="/privacy-and-policy">
+        <PrivacyAndPolicy />
+      </Route>
+
+      <Route path={"/" || "/en" || "/id" || "*"}>
+        <Index />
+      </Route>
+    </Switch>
+  );
 };
 
 export default App;
