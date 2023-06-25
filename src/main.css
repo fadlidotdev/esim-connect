@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+p,
+li {
+  @apply font-light;
+}
+
+section {
+  @apply mb-6;
+}
+
+section h2 {
+  @apply font-bold;
+}
+
+section p:not(:last-child) {
+  @apply mb-4;
+}
+
+section p+ul {
+  @apply mb-4 -mt-2;
+}
+
+ul {
+  @apply pl-4 list-disc list-inside;
+}
