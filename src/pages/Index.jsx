@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Logo from "../components/Logo";
 import { useTranslation } from "../components/TranslationProvider";
+import LanguageSwitcher from "../components/LanguageSwitcher";
 
 const Index = () => {
   const { t, isEnglish } = useTranslation();
@@ -10,6 +11,10 @@ const Index = () => {
 
   return (
     <div className="bg-center h-screen flex text-center p-5 text-white flex-col items-center justify-center bg-[url('/background.jpg')]">
+      <div className="absolute z-50 top-5 right-5">
+        <LanguageSwitcher />
+      </div>
+
       <div className="absolute right-5 top-5 left-5">
         <Link to={hrefHome}>
           <Logo className="md:mx-auto" />
