@@ -8,27 +8,27 @@ const translationContext = createContext();
 const TranslationProvider = ({ children }) => {
   const { pathname } = useLocation();
 
-  const isEnglish = useMemo(() => {
-    return pathname.includes("/en");
+  const isIndonesia = useMemo(() => {
+    return pathname.includes("/id");
   }, [pathname]);
 
   return (
-    <translationContext.Provider value={{ isEnglish: isEnglish }}>
+    <translationContext.Provider value={{ isIndonesia: isIndonesia }}>
       {children}
     </translationContext.Provider>
   );
 };
 
 export const useTranslation = () => {
-  const { isEnglish } = useContext(translationContext);
+  const { isIndonesia } = useContext(translationContext);
 
   const t = (translation_id) => {
-    const translation = i18n.resources[isEnglish ? "en" : "id"]["translation"];
+    const translation = i18n.resources[isIndonesia ? "id" : "en"]["translation"];
 
     return translation[translation_id] ?? "";
   };
 
-  return { t, isEnglish };
+  return { t, isIndonesia };
 };
 
 export default TranslationProvider;

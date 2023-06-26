@@ -4,10 +4,10 @@ import { useTranslation } from "../components/TranslationProvider";
 import LanguageSwitcher from "../components/LanguageSwitcher";
 
 const Index = () => {
-  const { t, isEnglish } = useTranslation();
+  const { t, isIndonesia } = useTranslation();
 
-  const hrefPrivacyAndPolicy = isEnglish ? "/en/privacy" : "/privacy";
-  const hrefHome = isEnglish ? "/en" : "/";
+  const hrefPrivacyAndPolicy = isIndonesia ? "/id/privacy" : "/privacy";
+  const hrefHome = isIndonesia ? "/id" : "/";
 
   return (
     <div className="bg-center h-screen flex text-center p-5 text-white flex-col items-center justify-center bg-[url('/background.jpg')]">

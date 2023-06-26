@@ -3,7 +3,7 @@ import { useTranslation } from "./TranslationProvider";
 import { useHistory, useLocation } from "react-router-dom/cjs/react-router-dom.min";
 
 const LanguageSwitcher = () => {
-  const { isEnglish } = useTranslation();
+  const { isIndonesia } = useTranslation();
 
   const history = useHistory();
   const { pathname } = useLocation();
@@ -14,17 +14,18 @@ const LanguageSwitcher = () => {
   const [selectedLanguage, setSelectedLanguage] = useState();
 
   useEffect(() => {
-    setSelectedLanguage(isEnglish ? "EN" : "ID");
-  }, [isEnglish]);
+    setSelectedLanguage(isIndonesia ? "ID" : "EN");
+  }, [isIndonesia]);
 
   const toggleSelectedLanguage = () => {
     const isPrivacyPage = pathname.includes("privacy");
-    setSelectedLanguage(selectedLanguage === "EN" ? "ID" : "EN");
+
+    setSelectedLanguage((prev) => (prev === "EN" ? "ID" : "EN"));
 
     if (isPrivacyPage) {
-      history.push(selectedLanguage === "EN" ? "/privacy" : "/en/privacy");
+      history.push(selectedLanguage === "EN" ? "/id/privacy" : "/privacy");
     } else {
-      history.push(selectedLanguage === "EN" ? "/" : "/en");
+      history.push(selectedLanguage === "EN" ? "/id" : "/");
     }
   };
 

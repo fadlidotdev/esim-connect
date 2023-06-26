@@ -4,9 +4,9 @@ import { useTranslation } from "../components/TranslationProvider";
 import LanguageSwitcher from "../components/LanguageSwitcher";
 
 const PrivacyAndPolicy = () => {
-  const { t, isEnglish } = useTranslation();
+  const { t, isIndonesia } = useTranslation();
 
-  const hrefHome = isEnglish ? "/en" : "/";
+  const hrefHome = isIndonesia ? "/en" : "/";
 
   return (
     <div className="p-5 py-0 text-[#53565A]">
