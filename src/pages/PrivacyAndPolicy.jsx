@@ -6,7 +6,7 @@ import LanguageSwitcher from "../components/LanguageSwitcher";
 const PrivacyAndPolicy = () => {
   const { t, isIndonesia } = useTranslation();
 
-  const hrefHome = isIndonesia ? "/en" : "/";
+  const hrefHome = isIndonesia ? "/id" : "/";
 
   return (
     <div className="p-5 py-0 text-[#53565A]">
